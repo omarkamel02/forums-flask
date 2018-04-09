@@ -1,5 +1,5 @@
-import models
-import stores
+from app import models
+from app import stores
 dummy_members = [
     models.Member("Mohammed", 20),
     models.Member("Mohammed", 22),
