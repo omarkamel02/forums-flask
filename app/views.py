@@ -1,6 +1,6 @@
 from flask import Flask,render_template,request,redirect,url_for
 from app import models,stores
-from __init__ import app,member_store,post_store
+from app import app,member_store,post_store
 import stores
 @app.route("/")
 @app.route("/index")
