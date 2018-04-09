@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request,redirect,url_for
 from app import models,stores
 from app import app,member_store,post_store
-import stores
+from app import stores
 @app.route("/")
 @app.route("/index")
 def home():
