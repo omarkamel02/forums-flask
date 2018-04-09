@@ -1,5 +1,5 @@
-import stores
-import dummy_data
+from app import stores
+from app import dummy_data
 from flask import Flask
 app = Flask(__name__)
 
