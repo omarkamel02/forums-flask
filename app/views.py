@@ -20,3 +20,8 @@ def topic_add():
 def topic_delete(id):
   post_store.delete(int(id))
   return redirect(url_for("home"))
+
+ @app.route("/topic/show/<id>")
+ def topic_show(id):
+   post=post_store.get_by_id(int(id))
+   return post.content
