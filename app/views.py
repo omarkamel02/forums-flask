@@ -2,6 +2,7 @@ from flask import Flask,render_template,request,redirect,url_for
 from app import models,stores
 from app import app,member_store,post_store
 from app import stores
+edit_post_id=0
 @app.route("/")
 @app.route("/index")
 def home():
@@ -25,13 +26,13 @@ def topic_delete(id):
 def topic_show(id):
     post=post_store.get_by_id(int(id))
     return post.content
-    
+
 
 @app.route("/topic/edit/<id>",methods = ["GET", "POST"])
 def topic_edit(id):
-
-    post=post_store.get_by_id(int(id))
+    edit_post_id=int(id)
     if request.method=="POST":
+        post=post_store.get_by_id(edit_post_id)
         new_content=request.form["new content"]
         post.content=new_content
         return redirect(url_for("home"))
