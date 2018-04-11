@@ -36,5 +36,5 @@ def topic_edit(id):
         post.content=new_content
         post_store.update(post)
         return redirect(url_for("home"))
-    else:
+    elif request.method=="GET":
         return render_template("topic_edit.html")
