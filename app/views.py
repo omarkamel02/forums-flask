@@ -30,11 +30,11 @@ def topic_show(id):
 
 @app.route("/topic/edit/<id>",methods = ["GET", "POST"])
 def topic_edit(id):
-    edit_post_id=int(id)
+    post=post_store.get_by_id(int(id))
     if request.method=="POST":
-        post=post_store.get_by_id(edit_post_id)
-        new_content=request.form["new content"]
+        new_content=request.form["content"]
         post.content=new_content
+        post_store.update(post)
         return redirect(url_for("home"))
     else:
         return render_template("topic_edit.html")
