@@ -25,6 +25,7 @@ def topic_delete(id):
 def topic_show(id):
     post=post_store.get_by_id(int(id))
     return post.content
+    
 
 @app.route("/topic/edit/<id>",methods = ["GET", "POST"])
 def topic_edit(id):
