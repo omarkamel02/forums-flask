@@ -32,8 +32,8 @@ def topic_show(id):
 def topic_edit(id):
     post=post_store.get_by_id(int(id))
     if request.method=="POST":
-        new_content=request.form["content"]
-        post.content=new_content
+        post.title=request.form["title"]
+        post.content=request.form["content"]
         post_store.update(post)
         return redirect(url_for("home"))
     elif request.method=="GET":
