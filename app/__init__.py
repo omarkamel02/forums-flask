@@ -9,4 +9,4 @@ post_store = stores.PostsStore()
 dummy_data.seed_stores(member_store, post_store)
 #from views import* for local
 from app import views
-from app import api.py
+from app import api
