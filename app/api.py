@@ -1,3 +1,6 @@
+from app import app
+from app import post_store
+
 @app.route("/api/topic/all")
 def topic_get_all():
   posts = [post.__dict__() for post in post_store.get_all()]
