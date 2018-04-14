@@ -71,6 +71,14 @@ class MemberStore(BaseStore):
             if member.name == member_name:
                 yield member
 
+    def __dict__(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "age": self.age,
+            "posts": self.posts,
+        }
+
 class PostsStore(BaseStore):
     posts=[]
     last_id=1
@@ -81,3 +89,11 @@ class PostsStore(BaseStore):
         all_posts=self.get_all()
         all_posts.sort(key=lambda post: post.date)
         return posts_sorted_byDate
+
+    def __dict__(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "content": self.content,
+            "member_id": self.member_id,
+        }
